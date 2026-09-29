@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Quiz Computacional</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Quiz Computacional — in&iacute;cio">Quiz<span>Computacional</span></a>
+    <p>Aprender Computa&ccedil;&atilde;o pode ser divertido.</p>
+  </header>
+  <main class="shell">
+    <section class="card" aria-labelledby="page-title">
+      <div id="loading" class="state" role="status"><span class="eyebrow">QUIZ DE COMPUTA&Ccedil;&Atilde;O</span><h1 id="page-title">Preparando seu quiz&hellip;</h1><p>Estamos carregando as quest&otilde;es.</p></div>
+      <div id="intro" class="state" hidden>
+        <span class="eyebrow">QUIZ DE COMPUTA&Ccedil;&Atilde;O</span><h1>Desafie seus conhecimentos</h1>
+        <p class="lead">Responda a 10 quest&otilde;es sobre o mundo da Computa&ccedil;&atilde;o. Leia com calma e escolha a melhor alternativa.</p>
+        <ul class="facts"><li>10 quest&otilde;es</li><li>Uma quest&atilde;o por vez</li><li>Veja seu resultado no final</li></ul>
+        <button id="start-button" class="button button-primary" type="button">Come&ccedil;ar quiz</button>
+      </div>
+      <div id="error" class="state" role="alert" hidden><span class="eyebrow">N&Atilde;O FOI POSS&Iacute;VEL CARREGAR</span><h1>Ops, tivemos um problema</h1><p id="error-message">N&atilde;o foi poss&iacute;vel preparar as quest&otilde;es. Tente recarregar a p&aacute;gina.</p></div>
+      <div id="question-view" class="state" hidden>
+        <div class="progress-row"><span id="progress-label" class="eyebrow">QUEST&Atilde;O 1 DE 10</span><span class="progress-track" aria-hidden="true"><span id="progress-bar"></span></span></div>
+        <h1 id="question-prompt" tabindex="-1"></h1>
+        <form id="answer-form">
+          <fieldset class="answers"><legend class="sr-only">Escolha uma resposta</legend><div id="options"></div></fieldset>
+          <p id="selection-message" class="message" aria-live="polite"></p>
+          <button id="confirm-button" class="button button-primary" type="submit">Confirmar resposta</button>
+        </form>
+        <section id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true" hidden>
+          <h2 id="feedback-title"></h2><p id="feedback-copy"></p><p id="explanation" hidden></p>
+          <button id="next-button" class="button button-primary" type="button">Pr&oacute;xima quest&atilde;o</button>
+          <button id="result-button" class="button button-primary" type="button" hidden>Ver resultado</button>
+        </section>
+      </div>
+      <div id="result-view" class="state" hidden>
+        <span class="eyebrow">FIM DO QUIZ</span><h1 tabindex="-1">Mandou bem por chegar at&eacute; aqui!</h1><p class="lead">Este &eacute; o resultado da sua tentativa:</p>
+        <dl class="score-list"><div><dt>Acertos</dt><dd id="correct-score">0</dd></div><div><dt>Erros</dt><dd id="wrong-score">0</dd></div><div><dt>Percentual de acertos</dt><dd id="percent-score">0%</dd></div></dl>
+        <button id="restart-button" class="button button-primary" type="button">Jogar novamente</button>
+      </div>
+    </section>
+    <p class="footer-note">Uma oportunidade para aprender algo novo a cada resposta.</p>
+  </main>
+</body>
+</html>
+
