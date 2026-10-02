@@ -1,1 +1,1 @@
-# quiz--educacional
+# quiz---computacional
